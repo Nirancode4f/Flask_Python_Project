@@ -36,6 +36,7 @@ def gen():
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + open('test_pic.jpg', 'rb').read() + b'\r\n')
 
+
 @app.route('/video_feed')
 def video_feed():
     return Response(gen(),
