@@ -5,8 +5,6 @@ import cv2
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def hello_world():  # put application's code here
     return render_template("index.html")
@@ -28,7 +26,6 @@ def gen():
         faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3)
 
         # print(f'Number of face found = {len(faces_rect)}')
-
         for (x, y, w, h) in faces_rect:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), thickness=2)
 
